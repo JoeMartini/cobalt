@@ -1,13 +1,10 @@
 version: '3.8'
-
 services:
   cobalt:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: cobalt
     ports:
       - "49000:9000"
-    working_dir: /app
-    command: ["node", "src/cobalt"]
-    volumes:
-      - ./:/app
+    restart: unless-stopped
