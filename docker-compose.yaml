@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: cobalt:latest
     container_name: cobalt
-    restart: always
+    restart: unless-stopped
     ports:
       - "49000:9000"
     volumes:
