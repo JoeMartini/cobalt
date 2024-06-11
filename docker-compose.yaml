@@ -8,7 +8,7 @@ services:
     container_name: cobalt
     restart: always
     ports:
-      - "9000:9000"
+      - "49000:9000"
     volumes:
       - ./:/app
     environment:
