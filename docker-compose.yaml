@@ -1,10 +1,15 @@
-version: '3.8'
+version: '3'
 services:
   cobalt:
     build:
       context: .
       dockerfile: Dockerfile
+    image: cobalt:latest
     container_name: cobalt
+    restart: always
     ports:
-      - "49000:9000"
-    restart: unless-stopped
+      - "9000:9000"
+    volumes:
+      - ./:/app
+    environment:
+      - NODE_ENV=production
